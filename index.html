@@ -40,19 +40,20 @@
         
         header {
             text-align: center;
-            margin-bottom: 40px;
-            padding-top: 20px;
+            margin-bottom: 30px;
+            padding-top: 15px;
             position: relative;
         }
         
         h1 {
             color: #ff4081;
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+            font-size: 2.8rem; /* 减小了标题字体大小 */
+            margin-bottom: 10px; /* 减小了底部间距 */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 1px; /* 减小了字间距 */
             animation: glow 2s infinite alternate;
+            line-height: 1.2; /* 调整行高 */
         }
         
         @keyframes glow {
@@ -66,15 +67,16 @@
         
         .subtitle {
             color: #f8bbd0;
-            font-size: 1.5rem;
-            margin-top: 10px;
+            font-size: 1.3rem; /* 减小了副标题字体大小 */
+            margin-top: 8px; /* 减小了顶部间距 */
+            line-height: 1.3; /* 调整行高 */
         }
         
         .content {
             display: flex;
             flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 30px; /* 减小了内容区域间距 */
+            margin-bottom: 30px;
         }
         
         .photo-section {
@@ -88,7 +90,7 @@
         
         .main-photo {
             width: 100%;
-            height: 400px;
+            height: 380px; /* 稍微减小了主照片高度 */
             object-fit: cover;
             transition: transform 0.5s;
             border-radius: 10px;
@@ -100,22 +102,23 @@
         
         .photo-description {
             text-align: center;
-            margin: 15px 0;
-            padding: 10px;
+            margin: 12px 0; /* 减小了描述区域间距 */
+            padding: 8px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            font-size: 1.1rem;
+            font-size: 1rem; /* 减小了描述字体大小 */
             color: #f8bbd0;
-            min-height: 60px;
+            min-height: 50px; /* 减小了最小高度 */
             display: flex;
             align-items: center;
             justify-content: center;
+            line-height: 1.4;
         }
         
         .photo-grid {
             display: flex;
-            gap: 15px;
-            margin-top: 15px;
+            gap: 12px; /* 减小了照片网格间距 */
+            margin-top: 12px;
             justify-content: center;
         }
         
@@ -126,7 +129,7 @@
             cursor: pointer;
             transition: all 0.3s;
             border-radius: 10px;
-            padding: 10px;
+            padding: 8px; /* 减小了内边距 */
             background: rgba(255, 255, 255, 0.05);
         }
         
@@ -141,10 +144,10 @@
         }
         
         .photo-item img {
-            width: 100px;
-            height: 100px;
+            width: 90px; /* 减小了缩略图尺寸 */
+            height: 90px;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 8px;
             border: 2px solid transparent;
             transition: all 0.3s;
         }
@@ -155,18 +158,18 @@
         }
         
         .photo-caption {
-            margin-top: 8px;
+            margin-top: 6px;
             text-align: center;
-            font-size: 0.9rem;
+            font-size: 0.85rem; /* 减小了标题字体大小 */
             color: #f8bbd0;
-            max-width: 100px;
-            line-height: 1.3;
+            max-width: 90px; /* 减小了最大宽度 */
+            line-height: 1.2;
         }
         
         .message-section {
             flex: 1;
             min-width: 300px;
-            padding: 30px;
+            padding: 25px; /* 减小了内边距 */
             background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -180,21 +183,21 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
+            height: 4px; /* 减小了顶部边框高度 */
             background: linear-gradient(90deg, #ff4081, #e91e63, #ff4081);
         }
         
         .message {
-            line-height: 2;
-            font-size: 1.2rem;
+            line-height: 1.8;
+            font-size: 1.1rem; /* 减小了消息字体大小 */
             color: #f5f5f5;
             text-align: justify;
         }
         
         .message p {
-            margin: 20px 0;
-            padding-left: 20px;
-            border-left: 3px solid #ff4081;
+            margin: 18px 0; /* 减小了段落间距 */
+            padding-left: 18px;
+            border-left: 2px solid #ff4081; /* 减小了左边框宽度 */
             transition: all 0.3s;
         }
         
@@ -207,63 +210,63 @@
             text-align: right;
             font-style: italic;
             color: #f8bbd0;
-            margin-top: 30px;
-            font-size: 1.5rem;
+            margin-top: 25px; /* 减小了顶部间距 */
+            font-size: 1.3rem; /* 减小了签名字体大小 */
         }
         
         .timer-section {
             text-align: center;
-            padding: 30px;
+            padding: 25px; /* 减小了内边距 */
             background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         
         .timer-title {
             color: #ff4081;
-            font-size: 2rem;
-            margin-bottom: 20px;
+            font-size: 1.8rem; /* 减小了计时器标题字体大小 */
+            margin-bottom: 18px; /* 减小了底部间距 */
         }
         
         .timer {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 18px; /* 减小了计时器间距 */
             flex-wrap: wrap;
         }
         
         .time-unit {
             background: rgba(0, 0, 0, 0.3);
-            padding: 20px;
+            padding: 18px; /* 减小了内边距 */
             border-radius: 10px;
-            min-width: 120px;
+            min-width: 110px; /* 减小了最小宽度 */
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
         .time-value {
-            font-size: 3rem;
+            font-size: 2.5rem; /* 减小了时间值字体大小 */
             color: #ff4081;
             font-weight: bold;
         }
         
         .time-label {
-            font-size: 1.2rem;
+            font-size: 1.1rem; /* 减小了时间标签字体大小 */
             color: #f8bbd0;
-            margin-top: 10px;
+            margin-top: 8px; /* 减小了顶部间距 */
         }
         
         .heart {
             color: #ff4081;
-            font-size: 2rem;
+            font-size: 1.8rem; /* 减小了心形图标大小 */
             animation: pulse 1.5s infinite;
             display: inline-block;
-            margin: 0 5px;
+            margin: 0 4px; /* 减小了外边距 */
         }
         
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
+            50% { transform: scale(1.15); } /* 减小了放大比例 */
             100% { transform: scale(1); }
         }
         
@@ -272,18 +275,18 @@
             bottom: 20px;
             right: 20px;
             background: rgba(0, 0, 0, 0.7);
-            padding: 15px;
+            padding: 12px; /* 减小了内边距 */
             border-radius: 50px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px; /* 减小了间距 */
             z-index: 100;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
         
         .music-btn {
-            width: 50px;
-            height: 50px;
+            width: 45px; /* 减小了按钮尺寸 */
+            height: 45px;
             border-radius: 50%;
             background: #ff4081;
             color: white;
@@ -292,7 +295,7 @@
             align-items: center;
             cursor: pointer;
             border: none;
-            font-size: 20px;
+            font-size: 18px; /* 减小了图标大小 */
             transition: all 0.3s;
         }
         
@@ -303,8 +306,8 @@
         
         .music-info {
             color: white;
-            font-size: 1rem;
-            margin-right: 10px;
+            font-size: 0.9rem; /* 减小了字体大小 */
+            margin-right: 8px; /* 减小了右边距 */
         }
         
         .start-btn {
@@ -313,67 +316,164 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 1000;
-            padding: 20px 40px;
-            font-size: 24px;
+            padding: 18px 36px; /* 减小了按钮尺寸 */
+            font-size: 22px; /* 减小了字体大小 */
             background: linear-gradient(45deg, #ff4081, #e91e63);
             color: white;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
             transition: all 0.4s;
             font-family: 'Ma Shan Zheng', cursive;
         }
         
         .start-btn:hover {
             transform: translate(-50%, -50%) scale(1.1);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 12px 22px rgba(0, 0, 0, 0.4);
         }
         
         .love-note {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 25px;
             color: #f8bbd0;
-            font-size: 1.2rem;
+            font-size: 1.1rem; /* 减小了字体大小 */
         }
         
         footer {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 35px;
             color: #f8bbd0;
-            font-size: 1rem;
-            padding: 20px;
+            font-size: 0.9rem; /* 减小了字体大小 */
+            padding: 18px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
+        /* 针对小屏幕设备的优化 */
         @media (max-width: 768px) {
-            .content {
-                flex-direction: column;
+            .container {
+                padding: 20px; /* 减小了容器内边距 */
+                border-radius: 15px;
+            }
+            
+            header {
+                margin-bottom: 20px;
+                padding-top: 10px;
             }
             
             h1 {
-                font-size: 2.5rem;
+                font-size: 2rem; /* 进一步减小标题字体大小 */
+                margin-bottom: 8px;
             }
             
-            .time-unit {
-                min-width: 80px;
+            .subtitle {
+                font-size: 1.1rem; /* 进一步减小副标题字体大小 */
+                margin-top: 5px;
             }
             
-            .time-value {
-                font-size: 2rem;
+            .content {
+                gap: 20px;
+                margin-bottom: 20px;
             }
             
-            .message p {
-                font-size: 1rem;
+            .photo-section, .message-section {
+                min-width: 100%;
             }
             
-            .start-btn {
-                padding: 15px 30px;
-                font-size: 20px;
+            .main-photo {
+                height: 300px; /* 减小主照片高度 */
             }
             
             .photo-grid {
-                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .photo-item img {
+                width: 80px; /* 减小缩略图尺寸 */
+                height: 80px;
+            }
+            
+            .photo-caption {
+                font-size: 0.8rem;
+                max-width: 80px;
+            }
+            
+            .message-section {
+                padding: 20px;
+            }
+            
+            .message {
+                font-size: 1rem;
+            }
+            
+            .timer-section {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .timer-title {
+                font-size: 1.5rem;
+            }
+            
+            .timer {
+                gap: 10px;
+            }
+            
+            .time-unit {
+                min-width: 70px;
+                padding: 15px;
+            }
+            
+            .time-value {
+                font-size: 1.8rem;
+            }
+            
+            .time-label {
+                font-size: 0.9rem;
+            }
+            
+            .music-player {
+                bottom: 15px;
+                right: 15px;
+                padding: 10px;
+            }
+            
+            .music-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+        }
+        
+        /* 针对超小屏幕设备的优化 */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem; /* 进一步减小标题字体大小 */
+            }
+            
+            .subtitle {
+                font-size: 1rem; /* 进一步减小副标题字体大小 */
+            }
+            
+            .main-photo {
+                height: 250px; /* 进一步减小主照片高度 */
+            }
+            
+            .photo-grid {
+                flex-wrap: wrap; /* 小屏幕上允许换行 */
+            }
+            
+            .timer {
+                gap: 5px;
+            }
+            
+            .time-unit {
+                min-width: 60px;
+                padding: 10px;
+            }
+            
+            .time-value {
+                font-size: 1.5rem;
             }
         }
     </style>
