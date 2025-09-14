@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>给最爱的乔乔</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Ma Shan Zheng', cursive, 'ZCOOL QingKe HuangYou', sans-serif;
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.7), rgba(216, 191, 216, 0.7)), url('https://images.unsplash.com/photo-1516487106395-f2d269d6a21c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') no-repeat center center/cover;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            padding: 30px;
+            position: relative;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-top: 20px;
+            position: relative;
+        }
+        
+        h1 {
+            color: #ff4081;
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+            font-weight: 700;
+            letter-spacing: 2px;
+            animation: glow 2s infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff4081, 0 0 20px #ff4081;
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff4081, 0 0 40px #ff4081;
+            }
+        }
+        
+        .subtitle {
+            color: #f8bbd0;
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+        
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .photo-section {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .main-photo {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.5s;
+            border-radius: 10px;
+        }
+        
+        .main-photo:hover {
+            transform: scale(1.05);
+        }
+        
+        .photo-description {
+            text-align: center;
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            font-size: 1.1rem;
+            color: #f8bbd0;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .photo-grid {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+        
+        .photo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .photo-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .photo-item.active {
+            background: rgba(255, 64, 129, 0.2);
+            border: 2px solid #ff4081;
+        }
+        
+        .photo-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .photo-item:hover img {
+            border: 2px solid #ff4081;
+            transform: scale(1.1);
+        }
+        
+        .photo-caption {
+            margin-top: 8px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #f8bbd0;
+            max-width: 100px;
+            line-height: 1.3;
+        }
+        
+        .message-section {
+            flex: 1;
+            min-width: 300px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .message-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #ff4081, #e91e63, #ff4081);
+        }
+        
+        .message {
+            line-height: 2;
+            font-size: 1.2rem;
+            color: #f5f5f5;
+            text-align: justify;
+        }
+        
+        .message p {
+            margin: 20px 0;
+            padding-left: 20px;
+            border-left: 3px solid #ff4081;
+            transition: all 0.3s;
+        }
+        
+        .message p:hover {
+            transform: translateX(5px);
+            background: rgba(255, 64, 129, 0.1);
+        }
+        
+        .signature {
+            text-align: right;
+            font-style: italic;
+            color: #f8bbd0;
+            margin-top: 30px;
+            font-size: 1.5rem;
+        }
+        
+        .timer-section {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+        
+        .timer-title {
+            color: #ff4081;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .time-unit {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            min-width: 120px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .time-value {
+            font-size: 3rem;
+            color: #ff4081;
+            font-weight: bold;
+        }
+        
+        .time-label {
+            font-size: 1.2rem;
+            color: #f8bbd0;
+            margin-top: 10px;
+        }
+        
+        .heart {
+            color: #ff4081;
+            font-size: 2rem;
+            animation: pulse 1.5s infinite;
+            display: inline-block;
+            margin: 0 5px;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 100;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .music-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #ff4081;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border: none;
+            font-size: 20px;
+            transition: all 0.3s;
+        }
+        
+        .music-btn:hover {
+            transform: scale(1.1);
+            background: #e91e63;
+        }
+        
+        .music-info {
+            color: white;
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+        
+        .start-btn {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            padding: 20px 40px;
+            font-size: 24px;
+            background: linear-gradient(45deg, #ff4081, #e91e63);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s;
+            font-family: 'Ma Shan Zheng', cursive;
+        }
+        
+        .start-btn:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        .love-note {
+            text-align: center;
+            margin-top: 30px;
+            color: #f8bbd0;
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #f8bbd0;
+            font-size: 1rem;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .time-unit {
+                min-width: 80px;
+            }
+            
+            .time-value {
+                font-size: 2rem;
+            }
+            
+            .message p {
+                font-size: 1rem;
+            }
+            
+            .start-btn {
+                padding: 15px 30px;
+                font-size: 20px;
+            }
+            
+            .photo-grid {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 开始按钮 -->
+    <button class="start-btn" id="startBtn"><i class="fas fa-heart"></i> 开启我的心意</button>
+    
+    <!-- 主要内容容器 -->
+    <div class="container" id="mainContainer">
+        <header>
+            <h1>❤️ 给最爱的你 ❤️</h1>
+            <div class="subtitle">遇见你，是我一生中最美的奇迹</div>
+        </header>
+        
+        <div class="content">
+            <div class="photo-section">
+                <img src="images/photo1.jpg" alt="我们的照片" class="main-photo" id="mainPhoto">
+                
+                <div class="photo-description" id="photoDescription">
+                    第一次约会牵手，去海洋馆玩，在对面停车场你下车挽住了我的胳膊，记得我当时很兴奋 ^_^
+                </div>
+                
+                <div class="photo-grid">
+                    <div class="photo-item active" onclick="changePhoto(this, 'images/photo1.jpg', '第一次约会牵手，去海洋馆玩，在对面停车场你下车挽住了我的胳膊，记得我当时很兴奋 ^_^')">
+                        <img src="images/photo1.jpg" alt="照片1">
+                        <div class="photo-caption">第一次牵手</div>
+                    </div>
+                    <div class="photo-item" onclick="changePhoto(this, 'images/photo2.jpg', '第一次爬山，也是在这一天正式邀请你来我家做客见家长。')">
+                        <img src="images/photo2.jpg" alt="照片2">
+                        <div class="photo-caption">第一次爬山</div>
+                    </div>
+                    <div class="photo-item" onclick="changePhoto(this, 'images/photo3.jpg', '第一次旅行，在金鸡湖看日出，在路边还偶遇了一只可爱的小猫。')">
+                        <img src="images/photo3.jpg" alt="照片3">
+                        <div class="photo-caption">第一次旅行</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="message-section">
+                <div class="message">
+                    <p>亲爱的，从遇见你的那一刻起，我的世界变得完全不同了。</p>
+                    <p>你的笑容有治愈的魔力，你的眼神如星辰般璀璨，你的一切都让我为之倾倒。</p>
+                    <p>每一天，每一刻，我都在感谢命运让我们相遇。</p>
+                    <p>我喜欢你和我电话时每句话后面的微笑，喜欢你害羞时的面颊绯红，喜欢你的一切一切。</p>
+                    <p>我想和你一起看日出日落，一起走过四季更迭，一起度过生命中的每一个重要时刻。</p>
+                    <p>爱你，不只是因为你是谁，更是因为我在你身边时的那个自己。</p>
+                    <p>愿余生有你，相伴到老。</p>
+                </div>
+                
+                <div class="signature">
+                    <p>——送给乔乔的话 <span class="heart"></span></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="timer-section">
+            <h2 class="timer-title">我们已经相爱了</h2>
+            <div class="timer">
+                <div class="time-unit">
+                    <div class="time-value" id="days">0</div>
+                    <div class="time-label">天</div>
+                </div>
+                <div class="time-unit">
+                    <div class="time-value" id="hours">0</div>
+                    <div class="time-label">小时</div>
+                </div>
+                <div class="time-unit">
+                    <div class="time-value" id="minutes">0</div>
+                    <div class="time-label">分钟</div>
+                </div>
+                <div class="time-unit">
+                    <div class="time-value" id="seconds">0</div>
+                    <div class="time-label">秒</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="love-note">
+            <p>每一天都更加爱你 <span class="heart">❤</span> 每一秒都更加珍惜你</p>
+        </div>
+        
+        <footer>
+            <p>用心制作，只为特别的你 | 2025</p>
+        </footer>
+    </div>
+    
+    <!-- 音乐播放器 -->
+    <div class="music-player">
+        <div class="music-info" id="musicInfo">遇见你是我最大的幸运</div>
+        <button class="music-btn" id="playBtn"><i class="fas fa-play"></i></button>
+        <button class="music-btn" id="muteBtn"><i class="fas fa-volume-up"></i></button>
+    </div>
+    
+    <!-- 背景音乐 -->
+    <audio id="bgMusic" loop>
+        <source src="music/love-song.mp3" type="audio/mpeg">
+        您的浏览器不支持音频元素。
+    </audio>
+
+    <script>
+        // 获取DOM元素
+        const startBtn = document.getElementById('startBtn');
+        const mainContainer = document.getElementById('mainContainer');
+        const bgMusic = document.getElementById('bgMusic');
+        const playBtn = document.getElementById('playBtn');
+        const muteBtn = document.getElementById('muteBtn');
+        const musicInfo = document.getElementById('musicInfo');
+        const photoDescription = document.getElementById('photoDescription');
+        
+        // 设置起始日期 - 可以修改为您的纪念日
+        const startDate = new Date('2025-05-05T00:00:00');
+        
+        // 初始隐藏主要内容
+        mainContainer.style.opacity = '0';
+        mainContainer.style.display = 'none';
+        
+        // 点击开始按钮
+        startBtn.addEventListener('click', function() {
+            // 隐藏按钮
+            startBtn.style.display = 'none';
+            
+            // 显示主要内容
+            mainContainer.style.display = 'block';
+            setTimeout(() => {
+                mainContainer.style.opacity = '1';
+                mainContainer.style.transition = 'opacity 1.5s ease';
+            }, 100);
+            
+            // 尝试播放背景音乐
+            playMusic();
+            
+            // 启动所有动画效果
+            startAnimations();
+        });
+        
+        // 播放音乐函数
+        function playMusic() {
+            // 尝试自动播放
+            bgMusic.play().then(() => {
+                musicInfo.textContent = "遇见你是我最大的幸运";
+                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            }).catch(error => {
+                musicInfo.textContent = "点击播放音乐";
+                console.log("自动播放被阻止:", error);
+            });
+        }
+        
+        // 播放/暂停按钮事件
+        playBtn.addEventListener('click', function() {
+            if (bgMusic.paused) {
+                bgMusic.play();
+                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                musicInfo.textContent = "遇见你是我最大的幸运";
+            } else {
+                bgMusic.pause();
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                musicInfo.textContent = "音乐已暂停";
+            }
+        });
+        
+        // 静音按钮事件
+        muteBtn.addEventListener('click', function() {
+            if (bgMusic.muted) {
+                bgMusic.muted = false;
+                muteBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+            } else {
+                bgMusic.muted = true;
+                muteBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            }
+        });
+        
+        // 更新计时器
+        function updateTimer() {
+            const now = new Date();
+            const diff = now - startDate;
+            
+            // 计算天、小时、分钟和秒
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            // 更新显示
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+        
+        // 更改主照片和描述
+        function changePhoto(element, src, description) {
+            // 更新主照片
+            document.getElementById('mainPhoto').src = src;
+            
+            // 更新照片描述
+            photoDescription.textContent = description;
+            
+            // 移除所有照片项的活动类
+            const photoItems = document.querySelectorAll('.photo-item');
+            photoItems.forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // 为当前选中的照片项添加活动类
+            element.classList.add('active');
+        }
+        
+        // 启动所有动画
+        function startAnimations() {
+            // 启动计时器
+            updateTimer();
+            setInterval(updateTimer, 1000);
+            
+            // 添加文字动画效果
+            const messages = document.querySelectorAll('.message p');
+            messages.forEach((p, index) => {
+                p.style.opacity = '0';
+                p.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    p.style.transition = 'opacity 1s ease, transform 1s ease';
+                    p.style.opacity = '1';
+                    p.style.transform = 'translateY(0)';
+                }, 500 + index * 300);
+            });
+        }
+    </script>
+</body>
+</html>
