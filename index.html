@@ -172,7 +172,7 @@
         }
 
         .category {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
 
         .category-title {
@@ -207,7 +207,7 @@
             cursor: pointer;
             display: flex;
             flex-direction: column;
-            height: 160px;
+            height: 170px; /* 调整卡片高度 */
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
             position: relative;
         }
@@ -235,12 +235,12 @@
         }
 
         .app-icon {
-            height: 60px;
+            height: 60px; /* 调整图标区域高度 */
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.6rem; /* 调整图标大小 */
             position: relative;
             overflow: hidden;
         }
@@ -257,7 +257,7 @@
         }
 
         .app-content {
-            padding: 1rem;
+            padding: 1rem; /* 调整内边距 */
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -265,19 +265,23 @@
         }
 
         .app-title {
-            font-size: 1rem;
+            font-size: 0.95rem; /* 调整字体大小确保一行显示 */
             margin-bottom: 0.5rem;
             color: var(--light);
             display: flex;
             align-items: center;
             font-weight: 600;
             line-height: 1.3;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .app-title i {
             margin-right: 6px;
             color: var(--accent);
             font-size: 0.9rem;
+            flex-shrink: 0;
         }
 
         .app-description {
@@ -331,12 +335,16 @@
             }
             
             .app-card {
-                height: 150px;
+                height: 160px; /* 调整移动端卡片高度 */
             }
             
             .app-icon {
-                height: 50px;
-                font-size: 1.3rem;
+                height: 50px; /* 调整移动端图标区域高度 */
+                font-size: 1.4rem; /* 调整移动端图标大小 */
+            }
+            
+            .app-title {
+                font-size: 0.9rem; /* 调整移动端字体大小 */
             }
         }
 
@@ -350,11 +358,15 @@
             }
             
             .app-card {
-                height: 140px;
+                height: 150px; /* 调整小屏幕卡片高度 */
             }
             
             .app-content {
                 padding: 0.8rem;
+            }
+            
+            .app-title {
+                font-size: 0.85rem; /* 调整小屏幕字体大小 */
             }
             
             header {
@@ -541,6 +553,12 @@
                     description: "在线PDF编辑与转换",
                     url: "https://www.ilovepdf.com/",
                     icon: "fa-file-pdf"
+                },
+                {
+                    name: "观影",
+                    description: "高清电影在线观看",
+                    url: "https://www.gyg.la/",
+                    icon: "fa-film"
                 }
             ]
         };
